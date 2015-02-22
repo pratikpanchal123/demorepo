@@ -1,0 +1,24 @@
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes.dex : \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\com\demo\demo\BuildConfig.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\com\demo\demo\CordovaApp.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\com\demo\demo\R$attr.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\com\demo\demo\R$drawable.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\com\demo\demo\R$string.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\com\demo\demo\R$xml.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\com\demo\demo\R.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\batterystatus\BatteryListener$1.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\batterystatus\BatteryListener.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\camera\CameraLauncher.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\camera\ExifHelper.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\camera\FileHelper.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\contacts\ContactAccessor$WhereOptions.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\contacts\ContactAccessor.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\contacts\ContactAccessorSdk5.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\contacts\ContactInfoDTO.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\contacts\ContactManager$1.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\contacts\ContactManager$2.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\contacts\ContactManager$3.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\contacts\ContactManager$4.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\contacts\ContactManager.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\classes\org\apache\cordova\device\Device.class \
+C:\xampp\htdocs\demo\platforms\android\ant-build\dexedLibs\classes-b9a110f6903e14c2a557b32da1888ce7.jar \

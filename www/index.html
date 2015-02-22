@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+      <head>
+    <title>Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="libs/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="libs/jquery.mobile-1.4.5/jquery.mobile.theme-1.4.5.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="libs/jquery.mobile-1.4.5/jquery.mobile.icons-1.4.5.min.css"/>
+    <link rel="stylesheet" href="libs/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+	<script type="text/javascript" src="libs/jquery.mobile-1.4.5/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="libs/jquery.mobile-1.4.5/jquery.validate.min.js"></script>
+    <script src="libs/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+   <body onload="init()">
+   <div data-role="page" id="dashboardPage">
+    <div data-role="header">
+        <h1>Dashboard</h1>
+    </div>
+    <div data-role="content">
+        <a href="#deviceinfo" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Device Information</a>
+		<a href="#camera" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Camera</a>
+		<a href="#contact" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Contact Search</a>
+        
+    </div>
+    <div data-position="fixed" data-role="footer">
+        <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
+    </div>
+</div>
+
+   <div data-role="page" id="deviceinfo">
+    <div data-role="header">
+        <h1>Device Information</h1>
+		<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button" id="backb">Back</a>
+		<a href="#dashboardPage" data-rel="home" class="ui-btn-right ui-btn ui-icon-home ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button">Home</a>
+    </div>
+    <div data-role="content">
+        <b>Device Model:</b><span id='model'></span>
+		<br/>
+		<b>Device Platfrom:</b><span id='platform'></span>
+		<br/>
+		<b>Device UUID:</b><span id='uid'></span>
+		<br/>
+		<b>Device Cordova:</b><span id='cordova'></span>
+		<br/>
+		<b>Device Version:</b><span id='version'></span>
+		<br/>
+		
+    </div>
+    <div data-position="fixed" data-role="footer">
+        <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
+    </div>
+</div>
+
+   <div data-role="page" id="camera">
+    <div data-role="header">
+        <h1>Camera</h1>
+		<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button" id="backb">Back</a>
+		<a href="#dashboardPage" data-rel="home" class="ui-btn-right ui-btn ui-icon-home ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button">Home</a>
+    </div>
+    <div data-role="content">
+        <input class="ui-btn ui-icon-mail" type="button" value="GetImage" id="cameraimg">
+		<img id="myImage" style="width: 100%;" src="">
+    </div>
+    <div data-position="fixed" data-role="footer">
+        <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
+    </div>
+</div>
+
+<div data-role="page" id="contact">
+    <div data-role="header">
+        <h1>Camera</h1>
+		<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button" id="backb">Back</a>
+		<a href="#dashboardPage" data-rel="home" class="ui-btn-right ui-btn ui-icon-home ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button">Home</a>
+    </div>
+    <div data-role="content">
+        <input class="ui-btn ui-icon-mail" type="button" value="GetImage" id="findContact">
+		<span id ='contactResult'></span>
+    </div>
+    <div data-position="fixed" data-role="footer">
+        <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
+    </div>
+</div>
+<script type="text/javascript">
+
+  $("#deviceinfo").on("pagebeforeshow", function(e) {
+	getDeviceInfo();
+}); </script>
+   </body>
+</html>
