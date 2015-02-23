@@ -45,6 +45,8 @@
 		<a href="#contact" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Contact Search</a>
 		<a href="#dialogs" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Dialogs</a>
 		<a href="#NetworkInfo" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Network Info</a>
+		<a href="#socialsharing" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Social Share</a>
+		<a href="#geolocation" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Geolocation</a>
         
     </div>
     <div data-position="fixed" data-role="footer">
@@ -149,6 +151,41 @@
         <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
     </div>
 </div>
+<div data-role="page" id="socialsharing">
+    <div data-role="header">
+        <h1>Social Sharing</h1>
+		<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button" id="backb">Back</a>
+		<a href="#dashboardPage" data-rel="home" class="ui-btn-right ui-btn ui-icon-home ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button">Home</a>
+    </div>
+    <div data-role="content">
+        <button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
+		<button onclick="window.plugins.socialsharing.share('Message and subject', 'The subject')">message and subject</button>
+		<button onclick="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')">link only</button>
+		<button onclick="window.plugins.socialsharing.share('Message and link', null, null, 'http://www.x-services.nl')">message and link</button>
+		<button onclick="window.plugins.socialsharing.share(null, null, 'https://www.google.nl/images/srpr/logo4w.png', null)">image only</button>
+    </div>
+    <div data-position="fixed" data-role="footer">
+        <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
+    </div>
+</div>
+<div data-role="page" id="geolocation">
+    <div data-role="header">
+        <h1>Network Information</h1>
+		<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button" id="backb">Back</a>
+		<a href="#dashboardPage" data-rel="home" class="ui-btn-right ui-btn ui-icon-home ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button">Home</a>
+    </div>
+    <div data-role="content">
+        <input class="ui-btn ui-icon-mail" type="button" onclick="javascript:getPosition();" value="GetCurrentPosition" id="networkInfomation">
+    </div>
+    <div data-position="fixed" data-role="footer">
+        <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
+    </div>
+</div>
+
 <script type="text/javascript">
 
   $("#deviceinfo").on("pagebeforeshow", function(e) {

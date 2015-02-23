@@ -515,6 +515,53 @@ function checkConnection() {
 
 }
 // ------------- Network Information end ----------------
+// ------------- Geolocation---------------
+ function onSuccessCallCheck(position) {
+   var TextResutl = 'Latitude: '+ position.coords.latitude + '\n' +
+          'Longitude: '         + position.coords.longitude         + '\n' +
+          'Altitude: '          + position.coords.altitude          + '\n' +
+          'Accuracy: '          + position.coords.accuracy          + '\n' +
+          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+          'Heading: '           + position.coords.heading           + '\n' +
+          'Speed: '             + position.coords.speed             + '\n' +
+          'Timestamp: '         + position.timestamp                + '\n';
+		
+		//TextResutl ='tst';
+	navigator.notification.alert(
+		TextResutl,  // message
+		alertDismissed,         // callback
+		'Geolocation',     // title
+		'Done'                  // buttonName
+		);
+		  
+};
+
+function getPosition(){
+	navigator.geolocation.getCurrentPosition(onSuccessCallCheck, onErrorCallBack);
+	/*TextResutl ='tst';
+	navigator.notification.alert(
+		TextResutl,  // message
+		alertDismissed,         // callback
+		'Geolocation',     // title
+		'Done'                  // buttonName
+		);*/
+}
+
+function onErrorCallBack(error) {
+   /* var TextResutle ='code: '    + error.code    + '\n' +
+          'message: ' + error.message + '\n';*/
+		  TextResutle = 'not';
+		
+	navigator.notification.alert(
+		TextResutle,  // message
+		alertDismissed,         // callback
+		'Geolocation',     // title
+		'Done'                  // buttonName
+		);
+}
+// ------------- Geolocaltion end---------------
+
+
 function deviceReady() {
 $("#cameraimg").on("click",cameraFunction);
 $("#findContact").on("click",contactSearchResult);

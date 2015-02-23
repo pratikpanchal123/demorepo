@@ -133,6 +133,27 @@ module.exports = [
         "clobbers": [
             "Connection"
         ]
+    },
+    {
+        "file": "plugins/nl.x-services.plugins.socialsharing/www/SocialSharing.js",
+        "id": "nl.x-services.plugins.socialsharing.SocialSharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.globalization/www/GlobalizationError.js",
+        "id": "org.apache.cordova.globalization.GlobalizationError",
+        "clobbers": [
+            "window.GlobalizationError"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.globalization/www/globalization.js",
+        "id": "org.apache.cordova.globalization.globalization",
+        "clobbers": [
+            "navigator.globalization"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -143,7 +164,10 @@ module.exports.metadata =
     "org.apache.cordova.camera": "0.3.5",
     "org.apache.cordova.contacts": "0.2.16",
     "org.apache.cordova.dialogs": "0.3.0",
-    "org.apache.cordova.network-information": "0.2.15"
+    "org.apache.cordova.network-information": "0.2.15",
+    "nl.x-services.plugins.socialsharing": "4.3.14",
+    "org.apache.cordova.globalization": "0.3.4",
+    "org.apache.cordova.geolocation": "0.3.12"
 }
 // BOTTOM OF METADATA
 });

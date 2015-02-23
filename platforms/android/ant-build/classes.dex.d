@@ -6,6 +6,13 @@ C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\com\demo\demo\R$dra
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\com\demo\demo\R$string.class \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\com\demo\demo\R$xml.class \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\com\demo\demo\R.class \
+C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\nl\xservices\plugins\SocialSharing$1.class \
+C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\nl\xservices\plugins\SocialSharing$2$1$1.class \
+C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\nl\xservices\plugins\SocialSharing$2$1.class \
+C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\nl\xservices\plugins\SocialSharing$2.class \
+C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\nl\xservices\plugins\SocialSharing$3.class \
+C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\nl\xservices\plugins\SocialSharing$SocialSharingRunnable.class \
+C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\nl\xservices\plugins\SocialSharing.class \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\batterystatus\BatteryListener$1.class \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\batterystatus\BatteryListener.class \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\camera\CameraLauncher.class \
@@ -40,6 +47,9 @@ C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$6$1.class \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$6.class \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification.class \
+C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\globalization\Globalization$1.class \
+C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\globalization\Globalization.class \
+C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\globalization\GlobalizationError.class \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager$1.class \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager.class \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\dexedLibs\classes-d1b04468279ac1dbca01d5494be1222c.jar \

@@ -265,12 +265,16 @@ C:\xampp\htdocs\demorepo\platforms\android\assets\www\libs\jquery.mobile-1.4.5\i
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\libs\jquery.mobile-1.4.5\images\icons-svg\user-white.svg \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\libs\jquery.mobile-1.4.5\images\icons-svg\video-black.svg \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\libs\jquery.mobile-1.4.5\images\icons-svg\video-white.svg \
+C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\nl.x-services.plugins.socialsharing \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.battery-status \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.camera \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.contacts \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.device \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.dialogs \
+C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.globalization \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.network-information \
+C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\nl.x-services.plugins.socialsharing\www \
+C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\nl.x-services.plugins.socialsharing\www\SocialSharing.js \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.battery-status\www \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.battery-status\www\battery.js \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.camera\www \
@@ -294,6 +298,9 @@ C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.dialogs\www\android \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.dialogs\www\notification.js \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.dialogs\www\android\notification.js \
+C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.globalization\www \
+C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.globalization\www\globalization.js \
+C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.globalization\www\GlobalizationError.js \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www\Connection.js \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www\network.js \
