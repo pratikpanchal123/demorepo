@@ -363,46 +363,6 @@ var st = "'";
     return false;
 }
 
-// file system function start
-function fileSystemSuccess(fileSystem) {
-    var directoryEntry = fileSystem.root; // to get root path to directory
-	var st = "'";
-    directoryEntry.getDirectory("fecograph", {create: true, exclusive: false}, onDirectorySuccess, onDirectoryFail);
-    var rootdir = fileSystem.root;
-    var fp = rootdir.toURL();
-    fp = fp+"/fecograph/image_name.png";
-	var path = encodeURI(filepath);
-    var fileTransfer = new FileTransfer();
-	fileTransfer.download(path,fp,  
-        function(entry) {
-    	    $("#graphdata").append("<div id='inner_div' style='width: 100%;'>");
-					//$("#graphdata").append("<a href=<img style='width: 100%;' src='"+ filepath +"'>");
-					$("#inner_div").append('<a href="javascript:window.plugins.fileOpener.open('+ st + entry.toURL() + st +')" ><img style="width: 100%;" src="'+ filepath +'"/></a>');
-					$("#graphdata").append("</div>");
-					$("#graphdata").append("<div id='test' style='width: 100%;'>");
-				$("#test").append('<input class="ui-btn ui-icon-mail" type="button" value="Share" onclick="window.plugins.socialsharing.share(null, null, '+ st + filepath + st +', null)" >');
-				$("#graphdata").append("</div>");
-    	},
-    	function(error) {
-    	    alert("download error source " + error.source);
-    	    alert("download error target " + error.target);
-    	    alert("upload error code" + error.code);
-    	}
-    );
-}
-function onDirectorySuccess(parent) {
-    console.log(parent);
-}
-
-function onDirectoryFail(error) {
-    alert("Unable to create new directory: " + error.code);
-}
-
-function fileSystemFail(evt) {
-    console.log(evt.target.error.code);
-}
-//--------file system function end 
-
 // ------- camera function start ---------------
 function cameraFunction(){
 //alert('test');
@@ -566,7 +526,59 @@ function vibratePhone(){
 navigator.vibrate(3000);
 }
 // ------------ Vibration end -------------
+// ---------- File Download -------------------
 
+function fileSystemSuccess(fileSystem) {
+filepath = "https://www.google.co.in/images/srpr/logo11w.png";
+var directoryEntry = fileSystem.root; // to get root path to directory
+	var st = "'";
+    directoryEntry.getDirectory("demo", {create: true, exclusive: false}, onDirectorySuccess, onDirectoryFail);
+    var rootdir = fileSystem.root;
+    var fp = rootdir.toURL();
+    fp = fp+"/demo/image_name.png";
+	var path = encodeURI(filepath);
+    var fileTransfer = new FileTransfer();
+	
+	fileTransfer.download(path,fp,  
+        function(entry) {
+		navigator.notification.alert(
+		entry.toURL(),  // message
+		alertDismissed,         // callback
+		'Geolocation',     // title
+		'Done'                  // buttonName
+		);
+    	var image = document.getElementById('myImageDownload');
+    image.src = entry.toURL();
+    	},
+    	function(error) {
+    	    /*alert("download error source " + error.source);
+    	    alert("download error target " + error.target);
+    	    alert("upload error code" + error.code);*/
+			navigator.notification.alert(
+		error.code,  // message
+		alertDismissed,         // callback
+		'Geolocation',     // title
+		'Done'                  // buttonName
+		);
+    	}
+    );
+}
+function downloadFile(){
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
+}
+
+function onDirectorySuccess(parent) {
+    console.log(parent);
+}
+
+function onDirectoryFail(error) {
+    alert("Unable to create new directory: " + error.code);
+}
+
+function fileSystemFail(evt) {
+    console.log(evt.target.error.code);
+}
+// ------------ File download end -------------------
 function deviceReady() {
 $("#cameraimg").on("click",cameraFunction);
 $("#findContact").on("click",contactSearchResult);

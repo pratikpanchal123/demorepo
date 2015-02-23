@@ -48,6 +48,7 @@
 		<a href="#socialsharing" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Social Share</a>
 		<a href="#geolocation" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Geolocation</a>
 		<a href="#vibration" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">vibration</a>
+		<a href="#filesystem" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">File System</a>
         
     </div>
     <div data-position="fixed" data-role="footer">
@@ -198,6 +199,22 @@
     </div>
     <div data-role="content">
         <input class="ui-btn ui-icon-mail" type="button" onclick="javascript:vibratePhone();" value="Vibrate" id="vibrate">
+    </div>
+    <div data-position="fixed" data-role="footer">
+        <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
+    </div>
+</div>
+<div data-role="page" id="filesystem">
+    <div data-role="header">
+        <h1>File System</h1>
+		<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button" id="backb">Back</a>
+		<a href="#dashboardPage" data-rel="home" class="ui-btn-right ui-btn ui-icon-home ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button">Home</a>
+    </div>
+    <div data-role="content">
+        <input class="ui-btn ui-icon-mail" type="button" onclick="javascript:downloadFile();" value="Download & save file" id="downloadImage">
+		<img id="myImage" style="width: 100%;" src="">
     </div>
     <div data-position="fixed" data-role="footer">
         <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
