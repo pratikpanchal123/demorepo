@@ -154,6 +154,14 @@ module.exports = [
         "clobbers": [
             "navigator.globalization"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.vibration/www/vibration.js",
+        "id": "org.apache.cordova.vibration.notification",
+        "merges": [
+            "navigator.notification",
+            "navigator"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -167,7 +175,8 @@ module.exports.metadata =
     "org.apache.cordova.network-information": "0.2.15",
     "nl.x-services.plugins.socialsharing": "4.3.14",
     "org.apache.cordova.globalization": "0.3.4",
-    "org.apache.cordova.geolocation": "0.3.12"
+    "org.apache.cordova.geolocation": "0.3.12",
+    "org.apache.cordova.vibration": "0.3.13"
 }
 // BOTTOM OF METADATA
 });

@@ -47,6 +47,7 @@
 		<a href="#NetworkInfo" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Network Info</a>
 		<a href="#socialsharing" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Social Share</a>
 		<a href="#geolocation" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Geolocation</a>
+		<a href="#vibration" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">vibration</a>
         
     </div>
     <div data-position="fixed" data-role="footer">
@@ -91,6 +92,7 @@
     <div data-role="content">
         <input class="ui-btn ui-icon-mail" type="button" value="GetImage" id="cameraimg">
 		<img id="myImage" style="width: 100%;" src="">
+		<span id='errorfail'></span>
     </div>
     <div data-position="fixed" data-role="footer">
         <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
@@ -185,6 +187,23 @@
         <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
     </div>
 </div>
+
+<div data-role="page" id="vibration">
+    <div data-role="header">
+        <h1>Vibration</h1>
+		<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button" id="backb">Back</a>
+		<a href="#dashboardPage" data-rel="home" class="ui-btn-right ui-btn ui-icon-home ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button">Home</a>
+    </div>
+    <div data-role="content">
+        <input class="ui-btn ui-icon-mail" type="button" onclick="javascript:vibratePhone();" value="Vibrate" id="vibrate">
+    </div>
+    <div data-position="fixed" data-role="footer">
+        <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
+    </div>
+</div>
+
 
 <script type="text/javascript">
 

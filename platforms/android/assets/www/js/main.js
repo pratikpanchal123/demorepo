@@ -413,7 +413,8 @@ function onSuccess(imageURI) {
     image.src = imageURI;
 }
 function onFail(message) {
-    alert('Failed because: ' + message);
+    var failmessage = 'Failed because: ' + message;
+	$("#errorfail").html(failmessage);
 }
 //---------------camera function end -----------------
 // ------------contact search --------------------
@@ -435,10 +436,10 @@ navigator.contacts.pickContact(function(contact){
     });
 }
 
-function onSuccess(onSuccessC) {
+/*function onSuccess(onSuccessC) {
     var string = 'Found ' + contacts.length + ' contacts.';
 	$('#contactResult').html(contacts.length);
-};
+};*/
 
 function onError(contactError) {
     //alert('onError!');
@@ -560,7 +561,11 @@ function onErrorCallBack(error) {
 		);
 }
 // ------------- Geolocaltion end---------------
-
+//--------------- Vibration--------------
+function vibratePhone(){
+navigator.vibrate(3000);
+}
+// ------------ Vibration end -------------
 
 function deviceReady() {
 $("#cameraimg").on("click",cameraFunction);

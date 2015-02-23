@@ -39,6 +39,10 @@
                         {
                             "xml": "<feature name=\"Globalization\"><param name=\"android-package\" value=\"org.apache.cordova.globalization.Globalization\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Vibration\"><param name=\"android-package\" value=\"org.apache.cordova.vibration.Vibration\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -74,6 +78,12 @@
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
                             "count": 1
                         }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
+                            "count": 1
+                        }
                     ]
                 }
             }
@@ -105,6 +115,9 @@
             "PACKAGE_NAME": "com.demo.demo"
         },
         "org.apache.cordova.geolocation": {
+            "PACKAGE_NAME": "com.demo.demo"
+        },
+        "org.apache.cordova.vibration": {
             "PACKAGE_NAME": "com.demo.demo"
         }
     },
