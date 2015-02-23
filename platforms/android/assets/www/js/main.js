@@ -416,7 +416,7 @@ function onFail(message) {
     alert('Failed because: ' + message);
 }
 //---------------camera function end -----------------
-
+// ------------contact search --------------------
 function contactSearchResult(){
 
 // find all contacts with 'Bob' in any name field
@@ -444,6 +444,52 @@ function onError(contactError) {
     //alert('onError!');
 	$('#contactResult').html('onError!');
 };
+// ------------contact search end --------------------
+
+// ---------- alert function ------------
+//1- alert
+function alertDismissed() {
+    // do something
+	$("#alertResult").html("You have dismissed alert");
+}
+function alertCheck(){
+navigator.notification.alert(
+    'You are the winner!',  // message
+    alertDismissed,         // callback
+    'Game Over',            // title
+    'Done'                  // buttonName
+);
+}
+
+//2 - confirm
+function onConfirm(buttonIndex) {
+   var confirmRs = 'You selected button ' + buttonIndex;
+   $("#confirmResult").html(confirmRs);
+}
+function confirmCheck(){
+navigator.notification.confirm(
+    'You are the winner!', // message
+     onConfirm,            // callback to invoke with index of button pressed
+    'Game Over',           // title
+    ['Restart','Exit']     // buttonLabels
+);
+}
+//3 - prompt
+
+function onPrompt(results) {
+    var promtRs = "You selected button number " + results.buttonIndex + " and entered " + results.input1;
+	$("#promptResult").html(promtRs);
+}
+function promptCheck(){
+navigator.notification.prompt(
+    'Please enter your name',  // message
+    onPrompt,                  // callback to invoke
+    'Registration',            // title
+    ['Ok','Exit'],             // buttonLabels
+    'Jane Doe'                 // defaultText
+);
+}
+//------- alert end ----------------------
 function deviceReady() {
 $("#cameraimg").on("click",cameraFunction);
 $("#findContact").on("click",contactSearchResult);

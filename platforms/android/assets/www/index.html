@@ -43,6 +43,7 @@
         <a href="#deviceinfo" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Device Information</a>
 		<a href="#camera" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Camera</a>
 		<a href="#contact" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Contact Search</a>
+		<a href="#dialogs" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Dialogs</a>
         
     </div>
     <div data-position="fixed" data-role="footer">
@@ -102,8 +103,30 @@
            data-role="button" role="button">Home</a>
     </div>
     <div data-role="content">
-        <input class="ui-btn ui-icon-mail" type="button" value="GetImage" id="findContact">
+        <input class="ui-btn ui-icon-mail" type="button" value="Get Contact" id="findContact">
 		<span id ='contactResult'></span>
+    </div>
+    <div data-position="fixed" data-role="footer">
+        <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
+    </div>
+</div>
+
+<div data-role="page" id="dialogs">
+    <div data-role="header">
+        <h1>Cordova Dialogs</h1>
+		<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button" id="backb">Back</a>
+		<a href="#dashboardPage" data-rel="home" class="ui-btn-right ui-btn ui-icon-home ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button">Home</a>
+    </div>
+    <div data-role="content">
+        <input class="ui-btn ui-icon-mail" onclick="javascript:alertCheck();" type="button" value="GetAlert" id="getAlert">
+		<span id ='alertResult'></span>
+		<input class="ui-btn ui-icon-mail" onclick="javascript:confirmCheck();" type="button" value="GetConfirm" id="getConfrim">
+		<span id ='confirmResult'></span>
+		<input class="ui-btn ui-icon-mail" onclick="javascript:promptCheck();" type="button" value="GetPrompt" id="getPrompt">
+		<span id ='promptResult'></span>
+		
     </div>
     <div data-position="fixed" data-role="footer">
         <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
