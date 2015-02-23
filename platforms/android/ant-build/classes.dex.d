@@ -40,4 +40,6 @@ C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$6$1.class \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$6.class \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification.class \
+C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager$1.class \
+C:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager.class \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\dexedLibs\classes-d1b04468279ac1dbca01d5494be1222c.jar \

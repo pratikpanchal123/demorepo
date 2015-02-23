@@ -270,6 +270,7 @@ C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.contacts \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.device \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.dialogs \
+C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.network-information \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.battery-status\www \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.battery-status\www\battery.js \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.camera\www \
@@ -293,4 +294,7 @@ C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.dialogs\www\android \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.dialogs\www\notification.js \
 C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.dialogs\www\android\notification.js \
+C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www \
+C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www\Connection.js \
+C:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www\network.js \
 C:\xampp\htdocs\demorepo\platforms\android\ant-build\AndroidManifest.xml \
