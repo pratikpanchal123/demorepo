@@ -35,18 +35,18 @@
     <feature name="FileTransfer">
         <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
     </feature>
-    <icon density="ldpi" src="icons/ldpi.png" />
-    <icon density="mdpi" src="icons/mdpi.png" />
-    <icon density="hdpi" src="icons/hdpi.png" />
-    <icon density="xhdpi" src="icons/xhdpi.png" />
-    <splash density="land-hdpi" src="icons/splash-land-hdpi.png" />
-    <splash density="land-ldpi" src="icons/splash-land-ldpi.png" />
-    <splash density="land-mdpi" src="icons/splash-land-mdpi.png" />
-    <splash density="land-xhdpi" src="icons/splash-land-xhdpi.png" />
-    <splash density="port-hdpi" src="icons/splash-port-hdpi.png" />
-    <splash density="port-ldpi" src="icons/splash-port-ldpi.png" />
-    <splash density="port-mdpi" src="icons/splash-port-mdpi.png" />
-    <splash density="port-xhdpi" src="icons/splash-port-xhdpi.png" />
+    <icon density="ldpi" src="icon/ldpi.png" />
+    <icon density="mdpi" src="icon/mdpi.png" />
+    <icon density="hdpi" src="icon/hdpi.png" />
+    <icon density="xhdpi" src="icon/xhdpi.png" />
+    <splash density="land-hdpi" src="icon/splash-land-hdpi.png" />
+    <splash density="land-ldpi" src="icon/splash-land-ldpi.png" />
+    <splash density="land-mdpi" src="icon/splash-land-mdpi.png" />
+    <splash density="land-xhdpi" src="icon/splash-land-xhdpi.png" />
+    <splash density="port-hdpi" src="icon/splash-port-hdpi.png" />
+    <splash density="port-ldpi" src="icon/splash-port-ldpi.png" />
+    <splash density="port-mdpi" src="icon/splash-port-mdpi.png" />
+    <splash density="port-xhdpi" src="icon/splash-port-xhdpi.png" />
     <name>DemoApp</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
