@@ -49,6 +49,7 @@
 		<a href="#geolocation" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">Geolocation</a>
 		<a href="#vibration" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">vibration</a>
 		<a href="#filesystem" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">File System</a>
+		<a href="#sqlite" class="ui-btn ui-icon-plus ui-btn-icon-left align_left">SQLite</a>
         
     </div>
     <div data-position="fixed" data-role="footer">
@@ -220,12 +221,36 @@
         <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
     </div>
 </div>
+<div data-role="page" id="sqlite">
+    <div data-role="header">
+        <h1>SQlite System</h1>
+		<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button" id="backb">Back</a>
+		<a href="#dashboardPage" data-rel="home" class="ui-btn-right ui-btn ui-icon-home ui-btn-icon-notext ui-shadow ui-corner-all"
+           data-role="button" role="button">Home</a>
+    </div>
+    <div data-role="content">
+        <input class="ui-btn ui-icon-mail" type="button" onclick="insert()" value="Insert" id="insert">
+        <input class="ui-btn ui-icon-mail" type="button" onclick="count()"  value="Count" id="count">
+        <input class="ui-btn ui-icon-mail" type="button" onclick="delete()" value="Delete" id="delete">
+    </div>
+    <div data-position="fixed" data-role="footer">
+        <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
+    </div>
+</div>
 
 
 <script type="text/javascript">
 
   $("#deviceinfo").on("pagebeforeshow", function(e) {
 	getDeviceInfo();
-}); </script>
+}); 
+
+$("#sqlite").on("pagebeforeshow", function(e) {
+	createDatabase();
+}); 
+
+
+</script>
    </body>
 </html>

@@ -1,3 +1,5 @@
+var DB;
+
 function init() {
 document.addEventListener("deviceready", deviceReady, false);
 //document.addEventListener("offline", offlineHandler, false);
@@ -319,3 +321,41 @@ $("#cameraimg").on("click",cameraFunction);
 $("#findContact").on("click",contactSearchResult);
 
 }
+
+function createDatabase(){
+	DB = window.sqlitePlugin.openDatabase({name: "employee"});
+  
+	DB.transaction(function(tx) {
+		tx.executeSql('DROP TABLE IF EXISTS test');
+		tx.executeSql('CREATE TABLE IF NOT EXISTS test (id integer primary key, name text, salary integer)');
+	});
+}
+
+function insert(){
+	DB.transaction(function(tx) {
+	  tx.executeSql("INSERT INTO test (name, salary) VALUES (?,?)", ["Amit", 100], function(tx, res) {
+		  console.log("insertId: " + res.insertId + " -- probably 1");
+		  console.log("rowsAffected: " + res.rowsAffected + " -- should be 1");
+		});
+	});
+}
+
+function count(){
+	DB.transaction(function(tx) {
+		tx.executeSql("select count(id) as cnt from test;", [], function(tx, res) {
+		  console.log("res.rows.length: " + res.rows.length + " -- should be 1");
+		  console.log("res.rows.item(0).cnt: " + res.rows.item(0).cnt + " -- should be 1");
+		});
+	});
+}
+
+function delete(){
+	DB.transaction(function(tx) {
+	  tx.executeSql("DELETE FROM test limit 1", [], function(tx, res) {
+		  console.log("insertId: " + res.insertId + " -- probably 1");
+		  console.log("rowsAffected: " + res.rowsAffected + " -- should be 1");
+		});
+	});
+}
+
+
