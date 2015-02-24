@@ -1,16 +1,16 @@
 function init() {
 document.addEventListener("deviceready", deviceReady, false);
-document.addEventListener("offline", offlineHandler, false);
+//document.addEventListener("offline", offlineHandler, false);
 deviceReady();
 $.mobile.defaultPageTransition = "none"
 delete init;
 }
 
 //cordova plugin add https://github.com/antonioJASR/FileOpener.git - file open
-function offlineHandler()
+/*function offlineHandler()
 {
 	$.mobile.changePage("#offlinePage");
-}
+}*/
 
 function checkPreAuth() {
     var form = $("#loginForm");
@@ -69,97 +69,6 @@ function handleLogin() {
     return false;
 }
 
-function handleSignup() {
-	var form = $("#signupForm");
-	var username = $("#susername", form).val();
-	var password = $("#spassword", form).val();
-	var mobile = $("#mobile", form).val();
-	var email = $("#email", form).val();
-	var name = $("#name", form).val();
-	var gender = $('input[name=gender]:checked').val();
-	var singupinfo = {"name":name,"email":email,"gender":gender,"method":"register","phone":mobile,"username":username,"password":password};
-	
-	$("#signupfrombutton",form).attr("disabled","disabled");
-    $('#message-box').html("");
-		$.ajax({
-		url : "http://cyberancient.com/fecograph/webservices/services.php",
-		type : 'POST', // I want a type as POST
-		data : "data=" + JSON.stringify(singupinfo),
-		dataType : "json",
-        beforeSend: function() { $.mobile.loading('show'); }, //Show spinner
-        complete: function() { $.mobile.loading('hide'); }, //Hide spinner
-        success : function(data) {
-		//console.log(data);
-			if (data.success ==1) {
-				$.mobile.changePage("#regiserSuccessPage");
-			}else{
-				$('#message-box').html(data.msg);
-				$("#submitButton").removeAttr("disabled");
-			}
-		}
-	});
-    return false;
-}
-
-function handleForgotPassword(){
-    var form = $("#forgot_password");
-    var username = $("#username", form).val();
-    var recovery_info = {"username":username,"method":"forgot_password"};
-
-    $.ajax({
-        url : "http://cyberancient.com/fecograph/webservices/services.php",
-        type : 'POST', // I want a type as POST
-        data : "data=" + JSON.stringify(recovery_info),
-        dataType : "json",
-        beforeSend: function() { $.mobile.loading('show'); }, //Show spinner
-        complete: function() { $.mobile.loading('hide'); }, //Hide spinner
-        success : function(data) {
-            if (data.success == 1) {
-                //$.mobile.changePage("#loginPage");
-				$("#password_form").hide();
-				$('#password_message').show();
-                $("#password_message").html("Your password is: <b>"+data.password+"</b> <br> <br> Click here to continue with <a href='#loginPage'>login</a>");
-            }else{
-				$('#password_message').show();
-				$("#password_form").show();
-                $("#password_message").html(data.msg);
-                $("#submitButton").removeAttr("disabled");
-            }
-        }
-    });
-    return false;
-}
-function handleGraphFormOne(){
-	var form = $("#dataGenerateFrom");
-	var values = $('input[name=graphValue]:checked').val();
-	sessionStorage.setItem('type', values);
-	$.mobile.changePage("#dataGeneratePageTwo");
-	return false;
-}
-
-function handleGraphValues(){
-var form = $("#dataGenerateFromTwo");
-var username = getLocalStorageData('username');
-//alert(username);
-var sympt = sessionStorage.getItem("type");
-//alert(sympt);
-var dataString = "";
-$('input[name="mid_type"]:checked').each(function() {
-   dataString += this.value+',';
-});
-var sttt = dataString.substring(0,dataString.length - 1);
-var data_values = {"stool_type":sympt,"symptoms":sttt};
-//localStorage.clear();
-var userdata = getLocalStorageData('userdata');
-addUserData(username,data_values);
-//var count = getCountOfUserData(username);
-//alert(count);
-$.mobile.changePage("#dataGeneratePage");
-
-/*var userdata = localStorage.getItem('userdata');
-console.log(JSON.parse(userdata));*/
-return false;
-}
 
 //Function get data from local storage, use this please.
 function getLocalStorageData(key)
@@ -187,180 +96,12 @@ function removeItemLocalStorage(username)
 	setLocalStorageData('userdata',JSON.stringify(userdata));
 }
 
-//Count of data for particular user
-function getCountOfUserData(username)
-{
-	var local_userdata = getLocalStorageData('userdata');
-	
-	//if(local_userdata == null || userdata[username]==undefined)
-	if(local_userdata == null)
-	{
-		return "0";
-	}
-	else
-	{
-		var userdata = JSON.parse(local_userdata);
-		if(userdata[username]==undefined)
-		{
-			return "0";
-		}
-		else
-		{
-			return userdata[username].data.length;
-		}
-	}
-}
-
-//Count of data for particular user
-function removeUserData(username, data_key)
-{
-	var userdata = JSON.parse(getLocalStorageData('userdata'));
-
-	if(userdata == null || userdata[username] == undefined)
-	{
-		return false;
-	}
-	else
-	{
-		userdata[username].data.splice(data_key,1);
-		setLocalStorageData('userdata',JSON.stringify(userdata));
-	}
-}
-
-function addUserData(username, data)
-{
-	//Get local data if any exists
-	if(getLocalStorageData('userdata') == null || getLocalStorageData('userdata') == '{}')
-	{
-		//If null create user wise entry in userdata
-		//if(userdata == null || userdata[username] == undefined)
-		{
-			var userdata = {};
-			//var first_data = {"data":[{"stool_type":"type1-hard","symptoms":"incomplete,with pain"}]};
-			var first_data = {"data":[data]};
-			userdata[username] = first_data;
-		}
-		/*
-		else
-		{
-			userdata[username].data.push(data);
-		}
-		*/
-	}
-	else
-	{
-		var userdata = JSON.parse(getLocalStorageData('userdata'));
-		userdata[username].data.push(data);
-	}
-	setLocalStorageData('userdata',JSON.stringify(userdata));
-}
-
-function handleGraphValuesOnPageInit(){
-	var form = $("#dataGenerateFrom");
-	
-	var username = getLocalStorageData('username');
-	
-	var count = getCountOfUserData(username);
-	
-	var message;
-
-	message = "Your total values saved ="+count+"/30";
-	$('#generateFecograph').button('disable');
-	if(count >= 20){
-		message = "Your total values saved ="+count+"/30 but still you can generate graph"
-		$('#generateFecograph').button('enable');
-	} 
-	if (count >= 30){
-	
-		message = "Your total values saved ="+count+"/30,Generate graph to added new values";
-		$('#generateFecograph').button('enable');
-		$('#submitGraph').button('disable');
-	}
-	dispalyMessage(message);
-	 return false;
-}
-
-function generateFinalGrahp(){
-var data = getLocalStorageData('userdata');
-var username = window.localStorage["username"];
- $.ajax({
-        url : "http://cyberancient.com/fecograph/webservices/services.php",
-        type : 'POST', // I want a type as POST
-        data : "data=" + data + "&method=GraphData&username="+username ,
-        dataType : "json",
-        beforeSend: function() { $.mobile.loading('show'); }, //Show spinner
-        complete: function() { $.mobile.loading('hide'); }, //Hide spinner
-        success : function(data) {
-            if (data.success == 1) {
-				if(data.clear_data == 1){
-					//removeItemLocalStorage(username);
-					$.mobile.changePage("#viewGraphPage");
-					
-				}else{
-				//$.mobile.changePage("#graphGenerateSuccess");
-				$.mobile.changePage("#viewGraphPage");
-				}
-			}else{
-                alert('not test');
-            }
-        }
-    });
- return false;
-}
-
-function dispalyMessage(message){
-	$('#message-box-graphValue').html(message);
-}
-
-function dataCount(){
-var str = localStorage.getItem("graphArray");
-	if(str==null){
-		return 0;
-		}else{
-			var arr  = str.split(",");
-			return arr.length
-		}
-}
 
 
 function handleLogout() {
 	window.localStorage.removeItem("usename");
 	window.localStorage.removeItem("password");
 	$.mobile.changePage("#loginPage");
-}
-function resetForm(form_id){
-	// alert("hi")
-	// alert($("#"+form_id));
-	$("#"+form_id).trigger('reset');
-}
- var filepath;
-function getGraphData(){
-	$("#graphdata").html("");
-	var username = getLocalStorageData('username');
-    var graph_info = {"username":username,"method":"getGraphData"};
-var st = "'";
-    $.ajax({
-        url : "http://cyberancient.com/fecograph/webservices/services.php",
-        type : 'POST', // I want a type as POST
-        data : "data=" + JSON.stringify(graph_info),
-        dataType : "json",
-        beforeSend: function() { $.mobile.loading('show'); }, //Show spinner
-        complete: function() { $.mobile.loading('hide'); }, //Hide spinner
-        success : function(data) {
-			var i = 0;
-            if (data.success == 1) {
-                $("#graphdata").append("<div id='records'>");
-				$.each(data.record, function (col, graph_row) {
-					filepath = data.record[col].graph_name;
-					window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
-                });
-				$("#graphdata").append("</div>");
-			}else{
-                $("#graphdata").html(data.msg);
-            }
-        }
-    });
-    return false;
 }
 
 // ------- camera function start ---------------
@@ -381,12 +122,6 @@ function onFail(message) {
 function contactSearchResult(){
 
 // find all contacts with 'Bob' in any name field
-/*var options      = new ContactFindOptions();
-options.filter   = "Bob";
-options.multiple = true;
-options.desiredFields = [navigator.contacts.fieldType.id];
-var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
-navigator.contacts.find(fields, onSuccessC, onError, options);*/
 navigator.contacts.pickContact(function(contact){
         var stringing = 'The following contact has been selected:' + JSON.stringify(contact);
 		$("#contactResult").html(stringing);
