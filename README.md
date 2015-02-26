@@ -1,6 +1,7 @@
 # demorepo
 ##### author: Amit Shah, Pratik Panchal
 ##### creted: 20-Feb-2015
+Apache Cordova plugin demostration
 
 working demo of android application development
 
