@@ -35,6 +35,9 @@
     <feature name="FileTransfer">
         <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
     </feature>
+    <feature name="SQLitePlugin">
+        <param name="android-package" value="org.pgsqlite.SQLitePlugin" />
+    </feature>
     <icon density="ldpi" src="icon/ldpi.png" />
     <icon density="mdpi" src="icon/mdpi.png" />
     <icon density="hdpi" src="icon/hdpi.png" />

@@ -34,7 +34,31 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </head>
-   <body onload="init()">
+<body onload="init()">
+   <div data-role="page" id="loginPage">
+    <!--------------first page header----------->
+    <div data-role="header">
+        <h1>Demo Cordova</h1>
+    </div>
+    <div data-role="content">
+        <form id="loginForm" method="post">
+            <div id="message-box-login" style="color:red"></div>
+            <div data-role="fieldcontain" class="ui-hide-label">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" value="" placeholder="Username"/>
+            </div>
+            <div data-role="fieldcontain" class="ui-hide-label">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" value="" placeholder="Password"/>
+            </div>
+            <input type="submit" value="Login" id="submitButton">
+        </form>
+    </div>
+    <div data-position="fixed" data-role="footer">
+        <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
+    </div>
+</div>
+	
    <div data-role="page" id="dashboardPage">
     <div data-role="header">
         <h1>Dashboard</h1>
@@ -56,7 +80,7 @@
         <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
     </div>
 </div>
-
+	
    <div data-role="page" id="deviceinfo">
     <div data-role="header">
         <h1>Device Information</h1>
@@ -103,7 +127,7 @@
 
 <div data-role="page" id="contact">
     <div data-role="header">
-        <h1>Camera</h1>
+        <h1>Contact Search</h1>
 		<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"
            data-role="button" role="button" id="backb">Back</a>
 		<a href="#dashboardPage" data-rel="home" class="ui-btn-right ui-btn ui-icon-home ui-btn-icon-notext ui-shadow ui-corner-all"
@@ -176,7 +200,7 @@
 </div>
 <div data-role="page" id="geolocation">
     <div data-role="header">
-        <h1>Network Information</h1>
+        <h1>Geolocation</h1>
 		<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all"
            data-role="button" role="button" id="backb">Back</a>
 		<a href="#dashboardPage" data-rel="home" class="ui-btn-right ui-btn ui-icon-home ui-btn-icon-notext ui-shadow ui-corner-all"
@@ -230,9 +254,11 @@
            data-role="button" role="button">Home</a>
     </div>
     <div data-role="content">
-        <input class="ui-btn ui-icon-mail" type="button" onclick="insert()" value="Insert" id="insert">
-        <input class="ui-btn ui-icon-mail" type="button" onclick="count()"  value="Count" id="count">
-        <input class="ui-btn ui-icon-mail" type="button" onclick="delete()" value="Delete" id="delete">
+        <input class="ui-btn ui-icon-mail" type="button" onclick="javascript:insert();" value="Insert" id="insert">
+        <input class="ui-btn ui-icon-mail" type="button" onclick="javascript:count();"  value="Count" id="count">
+        <input class="ui-btn ui-icon-mail" type="button" onclick="javascript:deletetest();" value="Delete" id="delete">
+        <input class="ui-btn ui-icon-mail" type="button" onclick="javascript:listData();" value="List" id="listdata">
+		<div id ="list"></div>
     </div>
     <div data-position="fixed" data-role="footer">
         <h4>&copy; Infostretch <script>var d=new Date(); document.write(d.getFullYear());</script></h4>
@@ -248,9 +274,7 @@
 
 $("#sqlite").on("pagebeforeshow", function(e) {
 	createDatabase();
-}); 
-
-
+});
 </script>
    </body>
 </html>

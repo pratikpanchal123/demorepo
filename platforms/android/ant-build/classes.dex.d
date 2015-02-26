@@ -108,4 +108,10 @@ c:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\
 c:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager$1.class \
 c:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager.class \
 c:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\apache\cordova\vibration\Vibration.class \
+c:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\pgsqlite\SQLitePlugin$1.class \
+c:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\pgsqlite\SQLitePlugin$Action.class \
+c:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\pgsqlite\SQLitePlugin$DBQuery.class \
+c:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\pgsqlite\SQLitePlugin$DBRunner.class \
+c:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\pgsqlite\SQLitePlugin$QueryType.class \
+c:\xampp\htdocs\demorepo\platforms\android\ant-build\classes\org\pgsqlite\SQLitePlugin.class \
 c:\xampp\htdocs\demorepo\platforms\android\ant-build\dexedLibs\classes-d1b04468279ac1dbca01d5494be1222c.jar \

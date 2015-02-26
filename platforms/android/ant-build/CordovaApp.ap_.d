@@ -265,6 +265,7 @@ c:\xampp\htdocs\demorepo\platforms\android\assets\www\libs\jquery.mobile-1.4.5\i
 c:\xampp\htdocs\demorepo\platforms\android\assets\www\libs\jquery.mobile-1.4.5\images\icons-svg\user-white.svg \
 c:\xampp\htdocs\demorepo\platforms\android\assets\www\libs\jquery.mobile-1.4.5\images\icons-svg\video-black.svg \
 c:\xampp\htdocs\demorepo\platforms\android\assets\www\libs\jquery.mobile-1.4.5\images\icons-svg\video-white.svg \
+c:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\com.brodysoft.sqlitePlugin \
 c:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\nl.x-services.plugins.socialsharing \
 c:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.battery-status \
 c:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.camera \
@@ -276,6 +277,8 @@ c:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova
 c:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.globalization \
 c:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.network-information \
 c:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.vibration \
+c:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\com.brodysoft.sqlitePlugin\www \
+c:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\com.brodysoft.sqlitePlugin\www\SQLitePlugin.js \
 c:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\nl.x-services.plugins.socialsharing\www \
 c:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\nl.x-services.plugins.socialsharing\www\SocialSharing.js \
 c:\xampp\htdocs\demorepo\platforms\android\assets\www\plugins\org.apache.cordova.battery-status\www \

@@ -14,14 +14,14 @@ delete init;
 	$.mobile.changePage("#offlinePage");
 }*/
 
-function checkPreAuth() {
+/*function checkPreAuth() {
     var form = $("#loginForm");
     if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
         $("#username", form).val(window.localStorage["username"]);
         $("#password", form).val(window.localStorage["password"]);
         handleLogin();
     }
-}
+}*/
 
 function getDeviceInfo(){
 var string = device.platform;
@@ -39,9 +39,32 @@ $("#version").html(version);
 }
 
 function handleLogin() {
-    var form = $("#loginForm");
+	var form = $("#loginForm");
 
-    var username = $("#username", form).val();
+	var username = $("#username", form).val();
+    var password = $("#password", form).val();
+	if(username != '' && password!= '') {
+        
+		if (username == 'ispl' && password == 'ispl') {
+				window.localStorage["username"] = username;
+				window.localStorage["password"] = password;
+				$.mobile.changePage("#dashboardPage");
+		}else{
+					   navigator.notification.alert(
+			"Login Failed",  // message
+			alertDismissed,         // callback
+			'Login',     // title
+			'Done'                  // buttonName
+			);
+			return false;
+		}
+    }
+    return false;
+    
+	/*
+	var form = $("#loginForm");
+
+	var username = $("#username", form).val();
     var password = $("#password", form).val();
 	if(username != '' && password!= '') {
         var login_info = {"method":"login","username":username,"password":password};
@@ -59,16 +82,21 @@ function handleLogin() {
 					window.localStorage["username"] = username;
 					window.localStorage["password"] = password;
                     //$.mobile.changePage("#dashboardPage");
-                    $.mobile.changePage("#dataGeneratePage");
+                    $.mobile.changePage("#dashboardPage");
                 }else{
-                    $('#message-box-login').html(data.msg);
-                    $("#submitButton").removeAttr("disabled");
+							   navigator.notification.alert(
+					"Login Failed",  // message
+					alertDismissed,         // callback
+					'Login',     // title
+					'Done'                  // buttonName
+					);
                     return false;
                 }
             }
         });
     }
     return false;
+	*/
 }
 
 
@@ -125,8 +153,14 @@ function contactSearchResult(){
 
 // find all contacts with 'Bob' in any name field
 navigator.contacts.pickContact(function(contact){
-        var stringing = 'The following contact has been selected:' + JSON.stringify(contact);
-		$("#contactResult").html(stringing);
+        //var stringing = 'The following contact has been selected:' + JSON.stringify(contact);
+        var stringing = JSON.stringify(contact);
+		
+		var contact_data = JSON.parse(stringing);
+		
+		var string = '<b>id:</b>'+contact_data.id+'<br>'+'<b>display name:</b>'+contact_data.displayName+'<br>'+'<b>number type:</b>'+contact_data.phoneNumbers[0].type+'<br>'+'<b>number:</b>'+contact_data.phoneNumbers[0].value+'<br>';
+	
+		$("#contactResult").html(string);
     },function(err){
         //console.log('Error: ' + err);
 		$("#contactResult").html(err);
@@ -281,7 +315,7 @@ var directoryEntry = fileSystem.root; // to get root path to directory
 		navigator.notification.alert(
 		entry.toURL(),  // message
 		alertDismissed,         // callback
-		'Geolocation',     // title
+		'File Download success',     // title
 		'Done'                  // buttonName
 		);
     	var image = document.getElementById('myImageDownload');
@@ -294,7 +328,7 @@ var directoryEntry = fileSystem.root; // to get root path to directory
 			navigator.notification.alert(
 		error.code,  // message
 		alertDismissed,         // callback
-		'Geolocation',     // title
+		'file download fail',     // title
 		'Done'                  // buttonName
 		);
     	}
@@ -319,7 +353,32 @@ function fileSystemFail(evt) {
 function deviceReady() {
 $("#cameraimg").on("click",cameraFunction);
 $("#findContact").on("click",contactSearchResult);
-
+$('#loginForm').validate({
+    rules: {
+        username: {
+            required: true
+        },
+        password: {
+            required: true
+        }
+    },
+    messages: {
+        username: {
+            required: "Please enter Username"
+        },
+        password: {
+            required: "Please enter your Password"
+        }
+    },
+    errorPlacement: function (error, element) {
+	    error.appendTo(element.parent().parent());
+		return false;
+    },
+    submitHandler: function (form) {
+        handleLogin();
+        return false;
+    }
+});
 }
 
 function createDatabase(){
@@ -329,13 +388,31 @@ function createDatabase(){
 		tx.executeSql('DROP TABLE IF EXISTS test');
 		tx.executeSql('CREATE TABLE IF NOT EXISTS test (id integer primary key, name text, salary integer)');
 	});
+	navigator.notification.alert(
+		'aftercreate',  // message
+		alertDismissed,         // callback
+		'database created successfully',     // title
+		'Done'                  // buttonName
+		);
 }
 
 function insert(){
 	DB.transaction(function(tx) {
 	  tx.executeSql("INSERT INTO test (name, salary) VALUES (?,?)", ["Amit", 100], function(tx, res) {
-		  console.log("insertId: " + res.insertId + " -- probably 1");
-		  console.log("rowsAffected: " + res.rowsAffected + " -- should be 1");
+		  /*var insertedId = "insertId: " + res.insertId + " -- ";
+		  	navigator.notification.alert(
+		insertedId,  // message
+		alertDismissed,         // callback
+		'Row Instered',     // title
+		'Done'                  // buttonName
+		);*/
+		  var rowAffected = "Row inserted: " + res.insertId + " -- ";
+		  	navigator.notification.alert(
+		rowAffected,  // message
+		alertDismissed,         // callback
+		'Rows Inserted',     // title
+		'Done'                  // buttonName
+		);
 		});
 	});
 }
@@ -343,19 +420,54 @@ function insert(){
 function count(){
 	DB.transaction(function(tx) {
 		tx.executeSql("select count(id) as cnt from test;", [], function(tx, res) {
-		  console.log("res.rows.length: " + res.rows.length + " -- should be 1");
-		  console.log("res.rows.item(0).cnt: " + res.rows.item(0).cnt + " -- should be 1");
+		
+		/*var rLength = "res.rows.length: " + res.rows.length + " -- should be 1";
+		navigator.notification.alert(
+		rLength,  // message
+		alertDismissed,         // callback
+		'res.rows.length',     // title
+		'Done'                  // buttonName
+		);*/
+		
+		var ritem = "Total Rows count: " + res.rows.item(0).cnt + " -- ";
+		navigator.notification.alert(
+		ritem,  // message
+		alertDismissed,         // callback
+		'Total Rows',     // title
+		'Done'                  // buttonName
+		);
 		});
 	});
 }
 
-function delete(){
+function deletetest(){
 	DB.transaction(function(tx) {
-	  tx.executeSql("DELETE FROM test limit 1", [], function(tx, res) {
-		  console.log("insertId: " + res.insertId + " -- probably 1");
-		  console.log("rowsAffected: " + res.rowsAffected + " -- should be 1");
+	  tx.executeSql("delete from test;", [], function(tx, res) {
+		var affectedID= "rowsAffected: " + res.rowsAffected + " -- should be 1";
+		navigator.notification.alert(
+		affectedID,  // message
+		alertDismissed,         // callback
+		'Record Deleted',     // title
+		'Done:'       // buttonName
+		);
 		});
 	});
+}
+
+function listData() {
+ DB.transaction(function(tx) {
+  tx.executeSql("select * from test;", [], function(tx, res) {
+   $('#list').empty();
+   $('#list').append("id/name/salary");
+    $('#list').append("<br>");
+   for(var i=0;i<res.rows.length;i++) {
+    $('#list').append(res.rows.item(0).id+'/'+res.rows.item(0).name+'/'+res.rows.item(0).salary);
+    $('#list').append("<br>");
+   }
+    //console.log("res.rows.length: " + res.rows.length + " -- should be 1");
+   // console.log("res.rows.item(0).cnt: " + res.rows.item(0).cnt + " -- should be 1");
+  });
+ });
 }
 
 
